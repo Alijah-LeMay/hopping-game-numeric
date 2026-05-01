@@ -1,11 +1,21 @@
 function solution(arrayA, arrayB) {
-  // TODO: Implement the function
+  let indexA = 0
   
-  for(let i=0;i<arrayA.length;i++) {
-    for(let j=0;i<arrayB.length;i++) {
-      
-    }
+  let indexB =-1
+  let in_arrayA=true
+  let visitedIndices = []
+  let visitedBValues = []
+
+  while(visitedIndices.indexOf(indexA) == -1) {
+    visitedIndices.push(indexA)
+    indexB = arrayA[indexA]
+    visitedBValues.push(indexB)
+    indexA = arrayB[indexB - 1] - 1     
+
+    in_arrayA = !in_arrayA
   }
+  return visitedBValues
+  
 }
 
 module.exports = { solution };
